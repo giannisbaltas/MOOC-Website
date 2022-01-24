@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset= UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="author" content="co-authored by: Petros Papatheodorou, Giannis Baltas">
+    <meta name="description" content="UniStud - Massive Open Online Courses demo website, created for the Web Programming course, at AUEB">
+    <link rel="shortcut icon" type="image/png" href="../../res/pictures/logo.png">
+    <title>UniStud: Physics Course!</title> 
+
+    <link rel="stylesheet" href="../css/standard.css">
+    <link rel="stylesheet" href="../../res/font-awesome-4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header id="header"></header>
+    <main class="register" id="banner">
+      <h1>Register!</h1>
+      <div class="narrow-centered after-submit-area invisible" id="after-submit-area">
+          <p>Registration complete!</p>
+          <button onclick="document.location.href='index.html'">Back to Home</button>
+      </div>
+      <form action="" id="register-form" class="narrow-centered">
+        <div class="inner-form">
+          <fieldset>
+            <legend>Personal Information</legend>
+            <div class="inner-fieldset">
+              <div class="input-container">
+                <input type="text" name="fname" id="fname" onchange="onInputChange(this)" class="input-effect" required>
+                <label class="required" for="fname">First Name</label>
+                <span class="focus-border">
+                  <i></i>
+                </span>
+              </div> 
+              <div class="input-container">
+                <input type="text" name="lname" id="lname" onchange="onInputChange(this)" class="input-effect" required>
+                <label for="lname" class="required">Last Name</label>
+                <span class="focus-border">
+                  <i></i>
+                </span>
+              </div> 
+              <div class="input-container">
+                  <input type="number" min="18" max="100" name="age" id="age" onchange="onInputChange(this)" class="input-effect" required>
+                  <label for="age" class="required">Age</label>
+                  <span class="focus-border">
+                      <i></i>
+                    </span>
+                </div> 
+              <div class="input-container">
+                  <input type="text" name="address" id="address" onchange="onInputChange(this)" pattern=".*[0-9].*" class="input-effect"
+                     oninvalid="setCustomValidity('Address must contain at least one number')" 
+                     oninput="setCustomValidity('')" required>
+                  <label for="address" class="required">Address</label>
+                  <span class="focus-border">
+                    <i></i>
+                  </span>
+              </div> 
+              <div>
+                <p class="bold">Education level:</p>
+                <div class="selectables">
+                  <div>
+                    <input type="radio" name="group" id="highschool">
+                    <label for="group">Highschool</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="group" id="university" checked>
+                    <label for="group">University</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="group" id="master's">
+                    <label for="group">Master's</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Account credentials</legend>
+            <div class="inner-fieldset">
+              <div class="input-container">
+                <input type="email" name="email" id="email" onchange="onInputChange(this)" class="input-effect" required>
+                <label for="email" class="required">Email</label>
+                <span class="focus-border">
+                  <i></i>
+                </span>
+              </div>  
+              <div class="input-container">
+                <input type="password" name="password" id="password" onchange="onInputChange(this)" class="input-effect"
+                     pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#^&])[A-Za-z\d@$!%*#^&]{6,}$"  
+                     oninvalid="setCustomValidity('Password must contain more than 5 characters and at least one number, one letter and one special character')" 
+                     oninput="setCustomValidity('')" required>
+                <label for="password" class="required">Password</label>
+                <span class="focus-border">
+                  <i></i>
+                </span>
+              </div> 
+              <div class="input-container">
+                <input type="password" name="r-password" id="r-password" onchange="onInputChange(this)" class="input-effect" required>
+                <label for="r-password" class="required">Repeat Password</label>
+                <span class="focus-border">
+                  <i></i>
+                </span>
+              </div> 
+            </div>
+          </fieldset>
+        </div>
+      </form>
+      <!-- button outside the form for custom validation and behaviour -->
+      <div class="button-area">
+        <button id="register-btn" class="button-juicy">Sumbit</button></br>
+      </div>
+    </main>
+    
+    <footer id="footer"></footer>
+  </body>
+  <script src="../js/load-header+footer.js"></script>
+  <script type="module" src="../js/register-form.js"></script>
+  <script src="../js/forms.js"></script>
+  <script src="../js/menu-btn.js"></script>
+</html>

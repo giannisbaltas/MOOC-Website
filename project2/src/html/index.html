@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset= UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="author" content="co-authored by: Petros Papatheodorou, Giannis Baltas">
+    <meta name="description" content="UniStud - Massive Open Online Courses demo website, created for the Web Programming course, at AUEB">
+    <link rel="shortcut icon" type="image/png" href="../../res/pictures/logo.png">
+
+    <title>UniStud: Your online university!</title> 
+
+    <link rel="stylesheet" href="../css/standard.css">
+    <link rel="stylesheet" href="../../res/font-awesome-4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+    <!-- Header implementation in load-header+footer.js -->
+    <header id="header"></header>
+
+    <main class="home-page" id="banner">
+      <div>
+        <h1 class="inline-block italics">Welcome to </h1> 
+        <h1 class="inline-block grey italics">Uni</h1>
+        <h1 class="inline-block italics"> Stud!</h1>
+      </div>
+
+      <section class="wrapper">
+        <div class="search_box">
+          <input type="text" class="input_search" id="searchField" placeholder="Search for a course title...">
+          <div class="search_btn"><i class="fa fa-search"></i></div>
+        </div>
+      </section>
+
+      <script id="template" type="text/x-handlebars-template">
+        <section class="courses-content">	
+          <section class="courses-content-container">
+            {{#each .}}
+            <article class="content">
+                  <h1>{{this.title}}</h1>
+                  <img class="courselogo" src=" https://elearning-aueb.herokuapp.com/static/images/{{this.img}}"  alt="logo">
+                  <h2>Course Description</h2>
+                  <p>{{this.description}}</p>
+                  <h3>Course Objectives</h3>                            
+                  <p>{{this.objectives}}</p>
+            </article>
+            {{/each}}
+          </section>
+        </section>
+      </script>
+    <div id="results-output"></div>
+    <div id="final_query_courses"></div>
+
+      <article class="introduction-article small-margin-top">
+        <header>
+          <h1 class="article-title">Our Vision</h1>
+        </header>
+        <hr></hr>
+        <picture>
+          <source srcset="../../res/pictures/knowledge193-290.jpg" media="(max-width: 732px)">
+          <source srcset="../../res/pictures/knowledge280-420.jpg" media="(max-width: 1200px)">
+          <img src="../../res/pictures/knowledge380-570.jpg" alt="Knowledge Image">
+        </picture>
+        <p>We strongly believe that everybody has a right to have access to high quality education.
+          <strong>UniStud</strong>, is our way of realizing and promoting this vision accross the world!
+        </p>
+        <section>
+          <h1>Introducing UniStud</h1>
+          <p><strong>UniStud</strong> is a new, hot <abbr title="Massive Open Online Courses">MOOC</abbr> platform, where
+            anybody can enroll in a wide variety of courses. The contents of the courses are guaranteed to be of top
+            quality, by collaborating with highly esteemed professional companies and universities.
+          </p>
+        </section>
+        <section>
+          <h1>The Goal</h1>
+          <p><strong>UniStud</strong> is here to establish itself as a provider of life-transforming learning experiences to learners around the world. 
+          Our goal for UniStud is to become a global online learning platform that offers anyone, anywhere, access to online courses and degrees from leading universities and companies. 
+          </p>
+        </section>
+        <section>
+          <h1>Start Today</h1>
+          <p>Take a look at out wide variety of topics and courses and start learning today! Whether you are looking for the 
+            next step in your career, or you want to learn more about a topic you were always interested, <strong>UniStud</strong> has you covered.
+          </p>
+        </section>
+        <div class="centered-element centered-text">
+          <button class="button-juicy" onclick="document.location.href='register.html';">Register!</button>
+          <button class="button-juicy" onclick="document.location.href='profile.html';">Log In!</button>
+        </div>
+      </article>
+    </main>
+
+    <footer id="footer"></footer>
+  </body>
+
+  <script src="../js/load-header+footer.js"></script>
+  <script src="../js/menu-btn.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.js"></script>
+  <script src="../js/app.js"></script>
+</html>
